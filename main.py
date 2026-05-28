@@ -248,13 +248,13 @@ class MiMotion():
     
         # ---------- 2. 计算步数范围 ----------
         try:
-            min_step = math.ceil(int(self.check_item.get("min_step", 10000)) * step_ratio)
-            max_step = math.ceil(int(self.check_item.get("max_step", 19999)) * step_ratio)
+            min_step = math.ceil(int(self.check_item.get("min_step", 18000)) * step_ratio)
+            max_step = math.ceil(int(self.check_item.get("max_step", 29999)) * step_ratio)
             if min_step > max_step:
                 min_step, max_step = max_step, min_step
         except Exception as e:
             print(f'步数范围初始化失败: {e}，使用默认值')
-            min_step, max_step = 10000, 19999
+            min_step, max_step = 18000, 29999
     
         step = str(random.randint(min_step, max_step))
     
